@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "e329d5ec-f2c0-4181-b7b7-3872e8ea3701",
+		"name": "Managing employee state Machine",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "employee",
+			"item": [
+				{
+					"name": "get employee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/employees/employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"employees",
+								"employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add employee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"ahmed\", \r\n    \"contractInformation\":\"high school\",\r\n    \"age\":14\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/employees/employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"employees",
+								"employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update employee status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9090/employees/employee/status/1?employeeEvents=APPROVE",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"employees",
+								"employee",
+								"status",
+								"1"
+							],
+							"query": [
+								{
+									"key": "employeeEvents",
+									"value": "APPROVE"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
