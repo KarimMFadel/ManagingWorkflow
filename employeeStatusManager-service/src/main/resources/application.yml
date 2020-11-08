@@ -1,0 +1,30 @@
+server:
+  port: 9090
+  servlet:
+    context-path: /employees/
+
+springdoc:
+  api-docs:
+    path: /api-docs
+    
+spring:
+  datasource:
+    url: jdbc:h2:mem:employeeDB
+    driver-class-name: org.h2.Driver
+    username: admin
+    password: P@$$w0rd
+    
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      group-id: group_id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
